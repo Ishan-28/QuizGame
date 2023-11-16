@@ -1,17 +1,15 @@
-from data import question_data
 from question_model import Question
+from data import question_data
 from quiz_brain import QuizBrain
 
-
-# Iterating items through the question_data list which contains a list of dictionaries
 question_bank = []
-for question_set in question_data:
-    question_text = question_set["text"]
-    question_answer = question_set["answer"]
-    problem = Question(question_text, question_answer)
-    question_bank.append(problem)
+for question in question_data:
+    question_text = question["text"]
+    question_answer = question["answer"]
+    new_question = Question(question_text, question_answer)
+    question_bank.append(new_question)
 
 quiz = QuizBrain(question_bank)
 
-while quiz.still_got_question:
+while quiz.still_got_questions():
     quiz.next_question()
