@@ -1,4 +1,5 @@
-problem_sets = [
+import random
+sets = [
     {"type": "boolean", "difficulty": "medium", "category": "Science: Computers",
      "question": "The common software-programming acronym &quot;I18N&quot; comes from the term &quot;Interlocalization&quot;.",
      "correct_answer": "False", "incorrect_answers": ["True"]},
